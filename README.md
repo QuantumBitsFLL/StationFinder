@@ -3,6 +3,9 @@
 ## To-do list:
 
 - revamp the home screen
+    - add a button to enter the map view
+    - add a button to enter the list view
+    - add a button to show the about screen
 - add an about screen
 - add a station list component
 - integrate the list component into the FlatList
