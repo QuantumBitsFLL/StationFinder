@@ -1,28 +1,28 @@
 
 import React from 'react';
-import { Button, View, Text } from 'react-native';
+import { Pressable, View, Text } from 'react-native';
 
 const HomeScreen = ({ navigation }) => {
     return (
         <>
-            <Button
-                title="Activate Profile Screen!"
+            <Pressable
+                // title="Activate Profile Screen!"
                 onPress={() =>
                     navigation.navigate('Profile', { name: 'Jane' })
                 }
-            />
-            <Button
-                title="Map"
+            ><Text>ProfileScreen</Text></Pressable>
+            <Pressable
+                // title="Map"
                 onPress={() =>
                     navigation.navigate('HomeMap', { data: '...map data...' })
                 }
-            />
-            <Button
-                title="StaticMap"
+            ><Text>Map</Text></Pressable>
+            <Pressable
+                // <Text> "StaticMap" </Text>
                 onPress={() =>
                     navigation.navigate('StaticMap', { data: '...map data...' })
                 }
-            />
+            ><Text>StaticMap</Text></Pressable>
         </>
     )
 };
