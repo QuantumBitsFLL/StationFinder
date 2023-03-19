@@ -9,4 +9,6 @@
 - add a function to go to the station on the map
 - integrate said function into the FlatList
 - add a details screen for the stations
-- 
+    - available power
+    - distance
+    - (maybe) list of plugs / how much it is charging
