@@ -10,7 +10,7 @@ import colors from '../shared/colors';
 import { upComingData } from '../shared/data';
 
 // @ts-ignore
-import ListView from '../assets/images/ListView.png'
+import CurrentLocationIcon from '../assets/images/CurrentLocation.png'
 // @ts-ignore
 import ListViewIcon from '../assets/images/ListViewIcon.png'
 
@@ -141,7 +141,7 @@ const HomeMapScreenScreen = ({ navigation, route }) => {
 
                 <View style={styles.RoundIcon}>
                     <Image
-                        source={ListView}
+                        source={CurrentLocationIcon}
                         resizeMode="contain"
                         style={styles.Image}
                     />

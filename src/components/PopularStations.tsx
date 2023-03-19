@@ -80,26 +80,26 @@ const PopularStations = (props: any) => {
 
                     <View style={styles.PopularSalonsIconMainView}>
             <View
-              style={{
+                style={{
                 flexDirection: 'row',
                 width: wp(15),
                 alignItems: 'center',
                 justifyContent: 'space-between',
-              }}>
-              <SvgIcons.Heart />
-              <SvgIcons.Share />
+                }}>
+                <SvgIcons.Heart />
+                <SvgIcons.Share />
             </View>
             <View>
-              <TouchableOpacity
-                style={styles.PopularSalonsBtnView}
+                <TouchableOpacity
+                style = {styles.PopularSalonsBtnView}
                 onPress={props.bookNow}>
                 <Text
-                  style={{
+                    style = {{
                     color: colors.white,
                     fontFamily: 'poppins-medium',
                     fontSize: 12,
-                  }}>
-                  {props.book}
+                    }}>
+                    {props.book}
                 </Text>
               </TouchableOpacity>
             </View>
