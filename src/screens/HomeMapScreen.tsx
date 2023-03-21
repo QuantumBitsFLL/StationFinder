@@ -84,7 +84,7 @@ const HomeMapScreenScreen = ({ navigation, route }) => {
                 }
                 style={({pressed}) => [
                     {
-                      backgroundColor: pressed ? 'rgb(210, 230, 255)' : 'lightgrey',
+                      backgroundColor: pressed ? 'rgb(10, 30, 55)' : 'rgb(10, 20, 25)',
                     },
                   ]}
             ><Text>Filters</Text></Pressable>
@@ -198,7 +198,7 @@ const HomeMapScreenScreen = ({ navigation, route }) => {
                     }
                     style={({pressed}) => [
                         {
-                          backgroundColor: pressed ? 'rgb(210, 230, 255)' : 'lightgrey',
+                            backgroundColor: pressed ? 'rgb(10, 30, 55)' : 'rgb(10, 20, 25)',
                         },
                       ]}
                 ><Text>Close</Text></Pressable>
