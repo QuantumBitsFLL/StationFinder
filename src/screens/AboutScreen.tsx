@@ -4,16 +4,16 @@ import { View, Text, StyleSheet } from 'react-native';
 const AboutScreen = ( { navigation } ) => {
     return (
         <View>
-            <Text>About screen</Text>
+            <Text style = { styles.title }>About screen</Text>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-    Title: {
-        fontSize: 20,
+    title: {
+        fontSize: 32,
     },
-    Container: {
+    container: {
         
     }
 })
