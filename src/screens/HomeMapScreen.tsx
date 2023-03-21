@@ -1,7 +1,7 @@
 
 import React, { useRef, useState } from 'react';
 import { Button, View, Text, StyleSheet, Dimensions, Keyboard, Modal, FlatList,
-    KeyboardAvoidingView, TouchableOpacity, Image } from 'react-native';
+    KeyboardAvoidingView, TouchableOpacity, Image, Pressable } from 'react-native';
 import MapView, { enableLatestRenderer, Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Modalize } from 'react-native-modalize';
@@ -78,12 +78,16 @@ const HomeMapScreenScreen = ({ navigation, route }) => {
 
 
             {/* <Text>Map 2</Text> */}
-            <Button
-                title="Open Filters"
+            <Pressable
                 onPress={() =>
                     setModalVisible(true)
                 }
-            />
+                style={({pressed}) => [
+                    {
+                      backgroundColor: pressed ? 'rgb(210, 230, 255)' : 'lightgrey',
+                    },
+                  ]}
+            ><Text>Filters</Text></Pressable>
             {/*
             <Button
                 title="Open Modal"
@@ -188,12 +192,16 @@ const HomeMapScreenScreen = ({ navigation, route }) => {
             >
 
                 <Text>  Modal Filters  </Text>
-                <Button
-                    title="Close"
+                <Pressable
                     onPress={() =>
                         setModalVisible(false)
                     }
-                />
+                    style={({pressed}) => [
+                        {
+                          backgroundColor: pressed ? 'rgb(210, 230, 255)' : 'lightgrey',
+                        },
+                      ]}
+                ><Text>Close</Text></Pressable>
 
 
             </Modal>
