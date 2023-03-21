@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View, Text, Dimensions, ScrollView} from 'react-native';
+import {StyleSheet, View, Text, Dimensions, ScrollView, Pressable} from 'react-native';
 import MapView, {Marker} from 'react-native-maps';
 
 const {width, height} = Dimensions.get('window');
@@ -79,17 +79,31 @@ const StaticMap = (props) => {
           <Text>still</Text>
           <Text>allows</Text>
           <Text>zooming.</Text>
+          <Pressable
+                onPress={() =>
+                    navigation.navigate('Home')
+                }
+                style={ ( {pressed} ) => staticMapScreenButton( pressed ) }
+            ><Text>Home</Text></Pressable>
         </ScrollView>
       </View>
     );
   }
-
+  const staticMapScreenButton = ( pressed: boolean ) => [
+    styles.staticMapScreenButton,
+     {
+      backgroundColor: pressed ? 'rgb(10, 30, 55)' : 'rgb(10, 20, 25)',
+     },
+     styles.wrapperCustom,
+  ];
 
 const styles = StyleSheet.create({
   container: {
     ...StyleSheet.absoluteFillObject,
     justifyContent: 'flex-end',
     alignItems: 'center',
+    backgroundColor: 'rgb(0, 0, 0)',
+    flex: 1,
   },
   scrollview: {
     alignItems: 'center',

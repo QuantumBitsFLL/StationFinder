@@ -1,7 +1,9 @@
 # OSX
 #
 .DS_Store
-
+# Colors
+#
+.vscode/settings.json
 # Xcode
 #
 build/
