@@ -5,6 +5,7 @@ import { Pressable, View, Text, StyleSheet } from 'react-native';
 const HomeScreen = ({ navigation }) => {
     return (
         <>
+            <Text>Station Finder</Text>
             <Pressable
                 // title="Activate Profile Screen!"
                 onPress={() =>
@@ -12,7 +13,7 @@ const HomeScreen = ({ navigation }) => {
                 }
                 style={({pressed}) => [
                     {
-                      backgroundColor: pressed ? 'rgb(210, 230, 255)' : 'white',
+                      backgroundColor: pressed ? 'rgb(210, 230, 255)' : 'lightgrey',
                     },
                     styles.wrapperCustom,
                   ]}
@@ -24,7 +25,7 @@ const HomeScreen = ({ navigation }) => {
                 }
                 style={({pressed}) => [
                     {
-                      backgroundColor: pressed ? 'rgb(210, 230, 255)' : 'white',
+                      backgroundColor: pressed ? 'rgb(210, 230, 255)' : 'lightgrey',
                     },
                     styles.wrapperCustom,
                   ]}
@@ -36,7 +37,7 @@ const HomeScreen = ({ navigation }) => {
                 }
                 style={({pressed}) => [
                     {
-                      backgroundColor: pressed ? 'rgb(210, 230, 255)' : 'white',
+                      backgroundColor: pressed ? 'rgb(210, 230, 255)' : 'lightgrey',
                     },
                     styles.wrapperCustom,
                   ]}
@@ -51,6 +52,9 @@ const styles = StyleSheet.create({
     },
     text: {
       fontSize: 16,
+    },
+    title: {
+      fontSize: 32,
     },
     wrapperCustom: {
       borderRadius: 8,
