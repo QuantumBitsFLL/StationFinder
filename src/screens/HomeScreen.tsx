@@ -7,45 +7,37 @@ const HomeScreen = ({ navigation }) => {
         <View style = { styles.homeScreen }>
             <Text style = { styles.title }>Station Finder</Text>
             <Pressable
-                // title="Activate Profile Screen!"
+                
                 onPress={() =>
                     navigation.navigate('Profile', { name: 'Jane' })
                 }
                 style={ ( {pressed} ) => homeScreenButton( pressed ) }
-            ><Text>ProfileScreen</Text></Pressable>
+            ><Text style = { styles.text }>ProfileScreen</Text></Pressable>
             <Pressable
-                // title="Map"
                 onPress={() =>
                     navigation.navigate('HomeMap', { data: '...map data...' })
                 }
                 style={ ( {pressed} ) => homeScreenButton( pressed ) }
-            ><Text>Map</Text></Pressable>
+            ><Text style = { styles.text }>Map</Text></Pressable>
             <Pressable
-                // <Text> "StaticMap" </Text>
                 onPress={() =>
                     navigation.navigate('StaticMap', { data: '...map data...' })
                 }
                 style={ ( {pressed} ) => homeScreenButton( pressed ) }
-                  /*({pressed}) => [
-                    {
-                            backgroundColor: pressed ? 'rgb(10, 30, 55)' : 'rgb(10, 20, 25)',
-                    },
-                    styles.wrapperCustom,
-                  ]*/
-            ><Text>StaticMap</Text></Pressable>
+            ><Text style = { styles.text }>StaticMap</Text></Pressable>
             <Pressable
-              onPress = { () => navigation.navigate( 'AboutScreen', {} ) }
-              style = { ( {pressed} ) => homeScreenButton( pressed ) }
-              ><Text>About Screen</Text></Pressable>
+                onPress = { () => navigation.navigate( 'AboutScreen', {} ) }
+                style = { ( {pressed} ) => homeScreenButton( pressed ) }
+            ><Text style = { styles.text }>About Screen</Text></Pressable>
         </View>
 
     )
 };
 const homeScreenButton = ( pressed: boolean ) => [
-  styles.homescreenButton,
-  {
-    backgroundColor: pressed ? 'rgb(10, 30, 55)' : 'rgb(10, 20, 25)',
-   },
+    {
+        backgroundColor: pressed ? 'rgb(10, 30, 55)' : 'rgb(10, 20, 25)',
+    },
+    styles.homescreenButton,
 //    styles.wrapperCustom,
 ];
 
@@ -55,31 +47,37 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
+        padding: 10,
+        rowGap: 10,
     },
     title: {
         fontSize: 32,
         color: 'rgb( 255, 255, 255 )',
         fontWeight: '900',
         justifyContent: 'flex-start',
+        marginBottom: 100,
+        marginTop: 100,
     },
     container: {
-      flex: 1,
-      justifyContent: 'center',
+        flex: 1,
+        justifyContent: 'center',
     },
     homescreenButton: { 
         justifyContent: 'center',
         alignSelf: 'center',
-        margin: 2.5,
+        margin: 3,
         padding: 6,
         borderRadius: 8,
         width: "80%",
-        borderColor: 'rgb(255, 255, 255)',
+        borderColor: 'rgb( 155, 170, 180 )',
+        color: 'rgb( 200, 200, 200 )',
         borderWidth: 1,
         alignItems: 'center',
     },
     text: {
-      fontSize: 16,
-      margin: 10,
+        fontSize: 16,
+        margin: 10,
+        color: 'rgb( 200, 200, 200 )'
     },
     // wrapperCustom: {
     //   borderRadius: 8,
