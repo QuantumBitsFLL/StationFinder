@@ -4,23 +4,39 @@ import { NavigationContainer, StackActions } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from '../screens/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
-import HomeMapScreenScreen from '../screens/HomeMapScreen';
+import HomeMapScreen from '../screens/HomeMapScreen';
 import StaticMap from '../components/StaticMap';
+import AboutScreen from '../screens/AboutScreen';
 
 const Stack = createNativeStackNavigator();
 
 const AppRoutes = () => {
     return (
         <NavigationContainer>
-            <Stack.Navigator screenOptions={{ headerShown: false }}>
+            <Stack.Navigator screenOptions = {{ headerShown: false }}>
                 <Stack.Screen
-                    name="Home"
+                    name = "Home"
                     component={HomeScreen}
-                    options={{ title: 'we do not care', headerShown: false }}
-                /> 
-                <Stack.Screen name="Profile" component={ProfileScreen} />
-                <Stack.Screen name="HomeMap" component={HomeMapScreenScreen} />
-                <Stack.Screen name="StaticMap" component={StaticMap} />
+                    options={{ title: 'Home Screen' }}
+                />
+                <Stack.Screen
+                    name = "Profile"
+                    component = { ProfileScreen }
+                />
+                
+                <Stack.Screen
+                    name = "HomeMap"
+                    component = { HomeMapScreen }
+                />
+                <Stack.Screen
+                    name = "StaticMap"
+                    component = { StaticMap }
+                />
+                <Stack.Screen
+                    name = "AboutScreen"
+                    component = { AboutScreen }
+                />
+                
             </Stack.Navigator>
         </NavigationContainer>
     )
