@@ -33,13 +33,17 @@ const HomeScreen = ({ navigation }) => {
                     styles.wrapperCustom,
                   ]*/
             ><Text>StaticMap</Text></Pressable>
+            <Pressable
+              onPress = { () => navigation.navigate( 'AboutScreen', {} ) }
+              style = { ( {pressed} ) => homeScreenButton( pressed ) }
+              ><Text>About Screen</Text></Pressable>
         </View>
 
     )
 };
 const homeScreenButton = ( pressed: boolean ) => [
   styles.homescreenButton,
-   {
+  {
     backgroundColor: pressed ? 'rgb(10, 30, 55)' : 'rgb(10, 20, 25)',
    },
 //    styles.wrapperCustom,
@@ -76,9 +80,6 @@ const styles = StyleSheet.create({
     text: {
       fontSize: 16,
       margin: 10,
-    },
-    title: {
-      fontSize: 32,
     },
     // wrapperCustom: {
     //   borderRadius: 8,
