@@ -35,7 +35,7 @@ const HomeScreen = ({ navigation }) => {
 };
 const homeScreenButton = ( pressed: boolean ) => [
     {
-        backgroundColor: pressed ? 'rgb(10, 30, 55)' : 'rgb(10, 20, 25)',
+        backgroundColor: pressed ? 'rgb(10, 55, 30)' : 'rgb(10, 35, 20)',
     },
     styles.button,
 //    styles.wrapperCustom,
