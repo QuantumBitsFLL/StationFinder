@@ -5,7 +5,7 @@ import popularStations from '../assets/images/PopularStations.png';
 const stations = [
     {
         id: 1,
-        stationName: 'Mane Beautilocks',
+        stationName: 'Manea',
         date: 'Sat,20 Aug',
         time: '07:00 PM',
         // coverImg: require('../assets/images/UpcomingImage.png'),
@@ -22,7 +22,7 @@ const stations = [
     },
     {
         id: 2,
-        stationName: 'Beautilocks',
+        stationName: 'Corbeanca',
         // coverImg: require('../assets/images/UpcomingImage.png'),
         pimg: popularStations,
         stationAddress: '2/250 Cambridge St,',
