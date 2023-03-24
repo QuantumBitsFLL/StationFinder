@@ -5,10 +5,10 @@ import { Button, View, Text, StyleSheet, Dimensions, Keyboard, Modal, FlatList,
 import MapView, { enableLatestRenderer, Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Modalize } from 'react-native-modalize';
-import Index from '../components/PopularStations';
+import Stations from '../components/Stations';
 import colors from '../shared/colors';
-import { upComingData } from '../shared/data';
-import styles from '../styles';
+import stations from '../shared/data';
+import styles, { mapStyle } from '../styles';
 
 // @ts-ignore
 import CurrentLocationIcon from '../assets/images/CurrentLocation.png'
@@ -26,12 +26,9 @@ const HomeMapScreenScreen = ({ navigation, route }) => {
     // For View List
     const ModalizeRef = useRef<any>(null);
 
-    const [Markers, setMarkers] = useState([
-        { latitude: 44.41111, longitude: 26.1719 },
-        { latitude: 44.42783, longitude: 26.1861 },
-        { latitude: 44.41785, longitude: 26.1912 },
-        { latitude: 44.44787, longitude: 26.2078 },
-    ]);
+    const [Markers, setMarkers] = useState(
+        stations.map( (station) => station.coords )
+    );
 
     const onNavigate = (item) => {
         navigation.navigate('InternalServicesRouteName', { pdata: item })
@@ -56,7 +53,7 @@ const HomeMapScreenScreen = ({ navigation, route }) => {
     const modalRender = () => (
         <View style={{ flex: 1 }}>
             <FlatList
-                data={['upComingData']}
+                data={stations}
                 keyExtractor={(item, index) => index.toString()}
                 showsVerticalScrollIndicator={false}
                 renderItem={({ item, index }) => (
@@ -100,6 +97,7 @@ const HomeMapScreenScreen = ({ navigation, route }) => {
             <MapView
                 provider={PROVIDER_GOOGLE}
                 style={styles.map}
+                customMapStyle = { mapStyle }
                 initialRegion={{
                     latitude: 44.4178094,
                     longitude: 26.182995,
@@ -123,13 +121,13 @@ const HomeMapScreenScreen = ({ navigation, route }) => {
             <View
                 style={styles.flatView}>
                 <FlatList
-                    data={upComingData}
+                    data={stations}
                     keyExtractor={(value, index) => index.toString()}
                     horizontal={true}
                     style={{ marginLeft: width * 0.01 }}
                     showsHorizontalScrollIndicator={false}
                     renderItem={({ item, index }) => (
-                        <Index
+                        <Stations
                             {...item}
                             navigation={() => onNavigate(item)}
                         //   bookNow={() => bookNow(item)}

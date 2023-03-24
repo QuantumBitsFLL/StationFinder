@@ -4,9 +4,205 @@ import colors from "../shared/colors";
 
 const { width, height } = Dimensions.get('screen');
 
+const mapStyle = [
+  {
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#242f3e"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#746855"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      {
+        "color": "#242f3e"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.locality",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#d59563"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#d59563"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#263c3f"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#6b9a76"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#38414e"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "geometry.stroke",
+    "stylers": [
+      {
+        "color": "#212a37"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "labels.icon",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#9ca5b3"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#746855"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "geometry.stroke",
+    "stylers": [
+      {
+        "color": "#1f2835"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#f3d19c"
+      }
+    ]
+  },
+  {
+    "featureType": "transit",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "transit",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#2f3948"
+      }
+    ]
+  },
+  {
+    "featureType": "transit.station",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#d59563"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#17263c"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#515c6d"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      {
+        "color": "#17263c"
+      }
+    ]
+  }
+];
+
 const styles = StyleSheet.create({
     homeScreen: {
-        backgroundColor: 'rgb( 0, 0, 0 )',
+        backgroundColor: 'rgb(10, 25, 20)',
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
@@ -69,13 +265,17 @@ const styles = StyleSheet.create({
         width: 250,
         height: 250,
     },
-    PopularStationsMainView: {
+    StationsMainView: {
         width: wp(70),
         marginLeft: 5,
         marginRight: 15,
         borderRadius: 10,
+        padding: 5,
         flexDirection: 'row',
-        backgroundColor: colors.white,
+        alignContent: 'center',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'rgb( 0, 40, 30 )',
         shadowOffset: {
             width: 0,
             height: 11,
@@ -87,34 +287,35 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         paddingBottom: 10,
     },
-    PopularStationsImage: {
+    StationsImage: {
         width: 100,
         height: 100,
         marginHorizontal: -10,
         marginVertical: -5,
     },
-    PopularStationsName: {
-        fontSize: 14,
+    StationsName: {
+        fontSize: 20,
         fontFamily: 'poppins-medium',
-        marginTop: 10,
-        marginBottom: 5,
+        color: 'rgb( 200, 200, 200 )',
+        fontWeight: 'bold',
+        // margin: 10,
         textAlign: 'left',
     },
-    PopularStationsRatingMainView: {
-        marginVertical: 5,
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        width: wp(45),
-    },
-    PopularStationsIconMainView: {
+    // StationsRatingMainView: {
+    //     marginVertical: 5,
+    //     flexDirection: 'row',
+    //     alignItems: 'center',
+    //     justifyContent: 'space-between',
+    //     width: wp(45),
+    // },
+    StationsIconMainView: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
         marginTop: 4,
         marginLeft: 2,
     },
-    PopularStationsBtnView: {
+    StationsBtnView: {
         backgroundColor: colors.red,
         padding: 10,
         borderRadius: 7,
@@ -143,6 +344,8 @@ const styles = StyleSheet.create({
     map: {
         flex: 1,
         marginTop: 10,
+        userInterfaceStyle: 'dark',
+        backgroundColor: 'rgb( 0, 30, 40 )',
     },
     Image: {
         width: width * 0.07,
@@ -211,3 +414,5 @@ const styles = StyleSheet.create({
 });
 
 export default styles;
+
+export { mapStyle };

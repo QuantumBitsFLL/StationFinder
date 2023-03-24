@@ -10,35 +10,35 @@ import styles from '../styles';
 
 const { width, height } = Dimensions.get('screen');
 
-const PopularStations = (props: any) => {
+const Stations = (props: any) => {
     const stars = [1, 2, 3, 4, 5];
 
     return (
         <TouchableOpacity onPress={props.navigation}>
             <View
                 style={[
-                    styles.PopularStationsMainView,
+                    styles.StationsMainView,
                     // props.ChangeWidth
                     //     ? { width: width * 0.85, marginBottom: 15, shadowOffset: { height: 8 } }
                     //     : {},
                 ]}>
-
-                <Image
+                {/* <Image
                     source={props.pimg}
                     resizeMode="contain"
                     style={[
-                        styles.PopularStationsImage,
+                        styles.StationsImage,
                         // props.ChangeWidth
                         // ? {width: width * 0.35, height: width * 0.35}
                         // : {},
                     ]}
-                />
+                /> */}
 
-                <View
-                    style={props.ChangeWidth ? { flex: 1, marginRight: width * 0.03 } : {}}>
-                    <Text style={styles.PopularStationsName}> {props.salonName}</Text>
-
-                    <View
+                <View style = {{ flex: 1,  alignItems: 'center', alignContent: 'center', padding: 10, paddingRight: 10 }}>
+                    <Image
+                        source = { require( '../assets/images/location.png' ) }
+                        style = {{ resizeMode: 'contain', width: 50 }}/>
+                    <Text style = { styles.StationsName }> { props.name } </Text>
+                    {/* <View
                         style={{
                             flexDirection: 'row',
                             alignItems: 'center',
@@ -48,9 +48,9 @@ const PopularStations = (props: any) => {
                             style={{ marginLeft: 6, color: colors.lightViolet, fontSize: 12 }}>
                             {props.salonAddress}
                         </Text>
-                    </View>
+                    </View> */}
 
-                    <View style={styles.PopularStationsRatingMainView}>
+                    {/* <View style={styles.StationsRatingMainView}>
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                             <Text>{props.ratingText}</Text>
 
@@ -77,9 +77,9 @@ const PopularStations = (props: any) => {
                             }}>
                             {props.shopStatus}%
                         </Text>
-                    </View>
+                    </View> */}
 
-                    <View style={styles.PopularStationsIconMainView}>
+                    <View style={styles.StationsIconMainView}>
             <View
                 style={{
                 flexDirection: 'row',
@@ -87,12 +87,12 @@ const PopularStations = (props: any) => {
                 alignItems: 'center',
                 justifyContent: 'space-between',
                 }}>
-                <SvgIcons.Heart />
-                <SvgIcons.Share />
+                {/* <SvgIcons.Heart />
+                <SvgIcons.Share /> */}
             </View>
             <View>
-                <TouchableOpacity
-                style = {styles.PopularStationsBtnView}
+                {/* <TouchableOpacity
+                style = {styles.StationsBtnView}
                 onPress={props.bookNow}>
                 <Text
                     style = {{
@@ -102,7 +102,7 @@ const PopularStations = (props: any) => {
                     }}>
                     {props.book}
                 </Text>
-              </TouchableOpacity>
+              </TouchableOpacity> */}
             </View>
           </View>
 
@@ -113,6 +113,6 @@ const PopularStations = (props: any) => {
     )
 }
 
-export default PopularStations;
+export default Stations;
 
 
