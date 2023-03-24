@@ -19,19 +19,19 @@ const AppRoutes = () => {
                     component={HomeScreen}
                     options={{ title: 'Home Screen' }}
                 />
-                <Stack.Screen
+                {/* <Stack.Screen
                     name = "Profile"
                     component = { ProfileScreen }
-                />
+                /> */}
                 
                 <Stack.Screen
                     name = "HomeMap"
                     component = { HomeMapScreen }
                 />
-                <Stack.Screen
+                {/* <Stack.Screen
                     name = "StaticMap"
                     component = { StaticMap }
-                />
+                /> */}
                 <Stack.Screen
                     name = "AboutScreen"
                     component = { AboutScreen }
