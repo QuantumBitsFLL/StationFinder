@@ -1,5 +1,5 @@
 import React from 'react';
-
+import styles from '../styles';
 import { View, Text, StyleSheet } from 'react-native'; 
 
 const AboutScreen = ( { navigation } ) => {
@@ -9,13 +9,5 @@ const AboutScreen = ( { navigation } ) => {
         </View>
     )
 }
-const styles = StyleSheet.create({
-    title: {
-        fontSize: 32,
-    },
-    container: {
-        
-    }
-})
 
 export default AboutScreen;

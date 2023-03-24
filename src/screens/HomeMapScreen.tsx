@@ -8,6 +8,7 @@ import { Modalize } from 'react-native-modalize';
 import Index from '../components/PopularStations';
 import colors from '../shared/colors';
 import { upComingData } from '../shared/data';
+import styles from '../styles';
 
 // @ts-ignore
 import CurrentLocationIcon from '../assets/images/CurrentLocation.png'
@@ -173,7 +174,7 @@ const HomeMapScreenScreen = ({ navigation, route }) => {
 
             {/* For View List */}
             <Modalize
-                modalStyle={styles.modelView}
+                modalStyle={styles.modalView}
                 modalHeight={height * 0.8}
                 ref={ModalizeRef}
                 customRenderer={modalRender()}
@@ -210,93 +211,5 @@ const HomeMapScreenScreen = ({ navigation, route }) => {
         </SafeAreaView>
     )
 };
-
-const styles = StyleSheet.create({
-    container: {
-        ...StyleSheet.absoluteFillObject,
-        justifyContent: 'flex-end',
-        alignItems: 'center',
-    },
-    scrollview: {
-        alignItems: 'center',
-        paddingVertical: 40,
-    },
-    // map: {
-    //     width: '100%',
-    //     height: '80%',
-    // },
-    safe: {
-        flex: 1,
-        backgroundColor: colors.white
-    },
-    map: {
-        flex: 1,
-        marginTop: 10,
-    },
-    Image: {
-        width: width * 0.07,
-        height: width * 0.07,
-    },
-    Round: {
-        flex: 1,
-        position: 'absolute',
-        top: height * 0.5,
-        right: width * 0.05,
-        shadowOffset: { width: 0, height: 3.09 },
-        shadowColor: 'rgba(0, 0, 0, 0.25)',
-        shadowOpacity: 1,
-        shadowRadius: 16.2,
-    },
-    containerInput: {
-        width: width * 0.9,
-        alignSelf: 'center',
-        backgroundColor: colors.viewcolor,
-        height: width * 0.13,
-    },
-    RoundIcon: {
-        backgroundColor: colors.white,
-        padding: 10,
-        borderRadius: 50,
-        width: width * 0.12,
-        alignSelf: 'flex-end',
-        marginBottom: width * 0.02,
-        elevation: 15,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    ViewLIstMainView: {
-        width: width * 0.33,
-        backgroundColor: colors.white,
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: 10,
-        borderRadius: 25,
-        elevation: 15,
-    },
-    ModalStyle: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: colors.white,
-        borderTopLeftRadius: 30,
-        borderTopRightRadius: 30,
-        height: height * 0.82,
-        flex: 1,
-    },
-    Container: {
-        backgroundColor: colors.white,
-        width: width,
-        paddingHorizontal: 20,
-        flex: 1,
-    },
-    modelView: {
-        alignItems: 'center',
-        paddingTop: width * 0.05,
-    },
-    flatView: {
-        position: 'absolute',
-        bottom: height * 0.03,
-    },
-});
 
 export default HomeMapScreenScreen;

@@ -6,6 +6,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import colors from '../shared/colors';
 import { wp } from '../shared/responsiveScreen';
 import SvgIcons from '../shared/SvgIcons';
+import styles from '../styles';
 
 const { width, height } = Dimensions.get('screen');
 
@@ -16,7 +17,7 @@ const PopularStations = (props: any) => {
         <TouchableOpacity onPress={props.navigation}>
             <View
                 style={[
-                    styles.PopularSalonsMainView,
+                    styles.PopularStationsMainView,
                     // props.ChangeWidth
                     //     ? { width: width * 0.85, marginBottom: 15, shadowOffset: { height: 8 } }
                     //     : {},
@@ -26,7 +27,7 @@ const PopularStations = (props: any) => {
                     source={props.pimg}
                     resizeMode="contain"
                     style={[
-                        styles.PopularSalonsImage,
+                        styles.PopularStationsImage,
                         // props.ChangeWidth
                         // ? {width: width * 0.35, height: width * 0.35}
                         // : {},
@@ -35,7 +36,7 @@ const PopularStations = (props: any) => {
 
                 <View
                     style={props.ChangeWidth ? { flex: 1, marginRight: width * 0.03 } : {}}>
-                    <Text style={styles.PopularSalonsName}> {props.salonName}</Text>
+                    <Text style={styles.PopularStationsName}> {props.salonName}</Text>
 
                     <View
                         style={{
@@ -49,7 +50,7 @@ const PopularStations = (props: any) => {
                         </Text>
                     </View>
 
-                    <View style={styles.PopularSalonsRatingMainView}>
+                    <View style={styles.PopularStationsRatingMainView}>
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                             <Text>{props.ratingText}</Text>
 
@@ -78,7 +79,7 @@ const PopularStations = (props: any) => {
                         </Text>
                     </View>
 
-                    <View style={styles.PopularSalonsIconMainView}>
+                    <View style={styles.PopularStationsIconMainView}>
             <View
                 style={{
                 flexDirection: 'row',
@@ -91,7 +92,7 @@ const PopularStations = (props: any) => {
             </View>
             <View>
                 <TouchableOpacity
-                style = {styles.PopularSalonsBtnView}
+                style = {styles.PopularStationsBtnView}
                 onPress={props.bookNow}>
                 <Text
                     style = {{
@@ -113,59 +114,5 @@ const PopularStations = (props: any) => {
 }
 
 export default PopularStations;
-
-const styles = StyleSheet.create({
-    PopularSalonsMainView: {
-        width: wp(70),
-        marginLeft: 5,
-        marginRight: 15,
-        borderRadius: 10,
-        flexDirection: 'row',
-        backgroundColor: colors.white,
-        shadowOffset: {
-            width: 0,
-            height: 11,
-        },
-        shadowColor: colors.darkgray,
-        shadowOpacity: 0.9,
-        shadowRadius: 5,
-        elevation: 8,
-        marginBottom: 20,
-        paddingBottom: 10,
-    },
-    PopularSalonsImage: {
-        width: 100,
-        height: 100,
-        marginHorizontal: -10,
-        marginVertical: -5,
-    },
-    PopularSalonsName: {
-        fontSize: 14,
-        fontFamily: 'poppins-medium',
-        marginTop: 10,
-        marginBottom: 5,
-        textAlign: 'left',
-    },
-    PopularSalonsRatingMainView: {
-        marginVertical: 5,
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        width: wp(45),
-    },
-    PopularSalonsIconMainView: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        marginTop: 4,
-        marginLeft: 2,
-    },
-    PopularSalonsBtnView: {
-        backgroundColor: colors.red,
-        padding: 10,
-        borderRadius: 7,
-        paddingHorizontal: 15,
-    },
-});
 
 
