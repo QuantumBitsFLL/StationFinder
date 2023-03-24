@@ -16,7 +16,7 @@ const AppRoutes = () => {
                 <Stack.Screen
                     name="Home"
                     component={HomeScreen}
-                    options={{ title: 'we do not care', headerShown: false }}
+                    options={{ title: 'Station Finder', headerShown: false }}
                 /> 
                 <Stack.Screen name="Profile" component={ProfileScreen} />
                 <Stack.Screen name="HomeMap" component={HomeMapScreenScreen} />

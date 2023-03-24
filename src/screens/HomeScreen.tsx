@@ -5,11 +5,11 @@ import { Pressable, View, Text, StyleSheet } from 'react-native';
 const HomeScreen = ({ navigation }) => {
     return (
         <View style = { styles.homeScreen }>
-            <Text style = { styles.title }>Station Finder</Text>
+            <Text style = { styles.title } >Station Finder</Text>
             <Pressable
                 // title="Activate Profile Screen!"
                 onPress={() =>
-                    navigation.navigate('Profile', { name: 'Jane' })
+                    navigation.navigate('Profile', { name: 'someone' })
                 }
                 style={ ( {pressed} ) => homeScreenButton( pressed ) }
             ><Text>ProfileScreen</Text></Pressable>
@@ -56,7 +56,6 @@ const styles = StyleSheet.create({
         fontSize: 32,
         color: 'rgb( 255, 255, 255 )',
         fontWeight: '900',
-        justifyContent: 'flex-start',
     },
     container: {
       flex: 1,
@@ -65,20 +64,25 @@ const styles = StyleSheet.create({
     homescreenButton: { 
         justifyContent: 'center',
         alignSelf: 'center',
-        margin: 2.5,
-        padding: 6,
+        margin: 5.5,
+        padding: 10,
         borderRadius: 8,
-        width: "80%",
+        width: "90%",
         borderColor: 'rgb(255, 255, 255)',
         borderWidth: 1,
         alignItems: 'center',
+        color: 'white',
+        backgroundColor: 'rgb(0, 0, 0)',
     },
     text: {
       fontSize: 16,
       margin: 10,
+      color: 'white',
     },
     title: {
       fontSize: 32,
+      paddingBottom: 30,
+      color: 'white',
     },
     // wrapperCustom: {
     //   borderRadius: 8,

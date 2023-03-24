@@ -82,11 +82,7 @@ const HomeMapScreenScreen = ({ navigation, route }) => {
                 onPress={() =>
                     setModalVisible(true)
                 }
-                style={({pressed}) => [
-                    {
-                      backgroundColor: pressed ? 'rgb(10, 30, 55)' : 'rgb(10, 20, 25)',
-                    },
-                  ]}
+                
             ><Text>Filters</Text></Pressable>
             {/*
             <Button
@@ -177,21 +173,19 @@ const HomeMapScreenScreen = ({ navigation, route }) => {
                 modalHeight={height * 0.8}
                 ref={ModalizeRef}
                 customRenderer={modalRender()}
-
             />
 
 
 
             {/* For Filter */}
-            <Modal
+            <Modal style = {{ backgroundColor: colors.black, flex: 1 }}
                 visible={modalVisible}
                 animationType="slide"
                 onRequestClose={() => {
                     setModalVisible(modalVisible);
                 }}
             >
-
-                <Text>  Modal Filters  </Text>
+                <Text style = {{ backgroundColor: colors.black, fontSize: 30 }}>Modal Filters</Text>
                 <Pressable
                     onPress={() =>
                         setModalVisible(false)
@@ -200,13 +194,13 @@ const HomeMapScreenScreen = ({ navigation, route }) => {
                         {
                             backgroundColor: pressed ? 'rgb(10, 30, 55)' : 'rgb(10, 20, 25)',
                         },
-                      ]}
+                    ]}
                 ><Text>Close</Text></Pressable>
-
-
+                <Text style = {{ backgroundColor: colors.black, paddingTop: 10, paddingBottom: 10 }}>Oh look some cool looking text</Text>
+                <Text style = {{ backgroundColor: colors.black, paddingBottom: 20 }}>Oh look some cool looking text</Text>
+                <Text style = {{ backgroundColor: colors.black, paddingBottom: 30 }}>Oh look some cool looking text</Text>
+                <Text style = {{ backgroundColor: colors.black, paddingBottom: 40 }}>Oh look some cool looking text</Text>
             </Modal>
-
-
         </SafeAreaView>
     )
 };
@@ -216,6 +210,7 @@ const styles = StyleSheet.create({
         ...StyleSheet.absoluteFillObject,
         justifyContent: 'flex-end',
         alignItems: 'center',
+        backgroundColor: colors.black,
     },
     scrollview: {
         alignItems: 'center',
@@ -227,7 +222,7 @@ const styles = StyleSheet.create({
     // },
     safe: {
         flex: 1,
-        backgroundColor: colors.white
+        backgroundColor: colors.black,
     },
     map: {
         flex: 1,
@@ -236,6 +231,7 @@ const styles = StyleSheet.create({
     Image: {
         width: width * 0.07,
         height: width * 0.07,
+        backgroundColor: colors.black,
     },
     Round: {
         flex: 1,
@@ -250,7 +246,7 @@ const styles = StyleSheet.create({
     containerInput: {
         width: width * 0.9,
         alignSelf: 'center',
-        backgroundColor: colors.viewcolor,
+        backgroundColor: colors.black,
         height: width * 0.13,
     },
     RoundIcon: {
@@ -277,14 +273,14 @@ const styles = StyleSheet.create({
     ModalStyle: {
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: colors.white,
+        backgroundColor: colors.black,
         borderTopLeftRadius: 30,
         borderTopRightRadius: 30,
         height: height * 0.82,
         flex: 1,
     },
     Container: {
-        backgroundColor: colors.white,
+        backgroundColor: colors.black,
         width: width,
         paddingHorizontal: 20,
         flex: 1,
@@ -292,6 +288,7 @@ const styles = StyleSheet.create({
     modelView: {
         alignItems: 'center',
         paddingTop: width * 0.05,
+        backgroundColor: colors.black,
     },
     flatView: {
         position: 'absolute',
