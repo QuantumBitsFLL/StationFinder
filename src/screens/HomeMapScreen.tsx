@@ -26,13 +26,15 @@ const HomeMapScreenScreen = ({ navigation, route }) => {
     // For View List
     const ModalizeRef = useRef<any>(null);
 
-    const [Markers, setMarkers] = useState<Array<{title: string, coords: LatLng}>>(
+    const [Markers, setMarkers] = useState<Array<{title: string, description?: string, coords: LatLng}>>(
         stations.map( (station) => {
             const coords = station.coords,
-                name = station.name;
+                name = station.name,
+                description = station.description;
             return { 
                 title: name,
-                coords: coords
+                coords: coords,
+                description: description,
             };
         } )
     );
@@ -118,7 +120,7 @@ const HomeMapScreenScreen = ({ navigation, route }) => {
                         key = { index }
                         coordinate = { marker.coords }
                         title={`${ marker.title }`}
-                        description={`${index} - Description`}
+                        description={`${marker.description}`}
                     // onRegionChangeComplete={region => setMarkers(region)}
                     />
                 ))}

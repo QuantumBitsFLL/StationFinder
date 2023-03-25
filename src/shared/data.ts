@@ -7,6 +7,7 @@ const stations = [
     {
         "id": 0,
         "name": "Primăria Corbeanca [A]",
+        "description": "",
         "coords": {
             "latitude": 44.59412021772872,
             "longitude": 26.03782308728203
@@ -22,6 +23,7 @@ const stations = [
     {
         "id": 1,
         "name": "Primăria Corbeanca [B]",
+        "description": "",
         "coords": {
             "latitude": 44.59416657180242, 
             "longitude": 26.037495176377107
@@ -36,6 +38,7 @@ const stations = [
     {
         "id": 2,
         "name": "Policlinica [B]",
+        "description": "",
         "coords": {
             "latitude": 44.59423,
             "longitude": 26.04263
@@ -50,6 +53,7 @@ const stations = [
     {
         "id": 3,
         "name": "Policlinica [A]",
+        "description": "",
         "coords": {
         "latitude":44.59416,
             "longitude":  26.04232
@@ -64,6 +68,7 @@ const stations = [
     {
         "id": 4,
         "name": "Arcadei [B]",
+        "description": "",
         "coords": {
             "latitude": 44.59616,
             "longitude": 26.05034
@@ -78,6 +83,7 @@ const stations = [
     {
         "id": 5,
         "name": "Arcadei [A]",
+        "description": "",
         "coords": {
             "latitude": 44.59617,
             "longitude": 26.05072
@@ -92,6 +98,7 @@ const stations = [
     {
         "id": 6,
         "name": "Penny [B]",
+        "description": "",
         "coords": {
             "latitude": 44.59827,
             "longitude": 26.05923
@@ -106,6 +113,7 @@ const stations = [
     {
         "id": 7,
         "name": "Penny [A]",
+        "description": "",
         "coords": {
             "latitude": 44.59827,
             "longitude": 26.05945
