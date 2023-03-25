@@ -201,7 +201,7 @@ const mapStyle = [
 ];
 
 const styles = StyleSheet.create({
-    homeScreen: {
+    screen: {
         backgroundColor: 'rgb(10, 25, 20)',
         flex: 1,
         alignItems: 'center',

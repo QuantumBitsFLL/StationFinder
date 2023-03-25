@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from 'react-native';
 
 const AboutScreen = ( { navigation } ) => {
     return (
-        <View>
+        <View style = { styles.screen }>
             <Text style = { styles.title }>About screen</Text>
         </View>
     )
