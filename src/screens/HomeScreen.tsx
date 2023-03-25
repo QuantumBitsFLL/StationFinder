@@ -4,7 +4,7 @@ import { Pressable, View, Text, StyleSheet } from 'react-native';
 import styles from '../styles';
 const HomeScreen = ({ navigation }) => {
     return (
-        <View style = { styles.homeScreen }>
+        <View style = { styles.screen }>
             <Text style = { styles.title }>Station Finder</Text>
             {/* <Pressable
                 
