@@ -214,7 +214,7 @@ const styles = StyleSheet.create({
         color: 'rgb( 255, 255, 255 )',
         fontWeight: '900',
         justifyContent: 'flex-start',
-        marginBottom: 100,
+        marginBottom: 10,
         marginTop: 100,
     },
     // container: {
@@ -414,5 +414,11 @@ const styles = StyleSheet.create({
 });
 
 export default styles;
-
+export const buttonStyle = ( pressed: boolean ) => [
+  {
+      backgroundColor: pressed ? 'rgb(10, 55, 30)' : 'rgb(10, 35, 20)',
+  },
+  styles.button,
+//    styles.wrapperCustom,
+];
 export { mapStyle };

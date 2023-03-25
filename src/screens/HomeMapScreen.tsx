@@ -8,12 +8,13 @@ import { Modalize } from 'react-native-modalize';
 import Stations from '../components/Stations';
 import colors from '../shared/colors';
 import stations from '../shared/data';
-import styles, { mapStyle } from '../styles';
+import styles, { buttonStyle, mapStyle } from '../styles';
 
 // @ts-ignore
 import CurrentLocationIcon from '../assets/images/CurrentLocation.png'
 // @ts-ignore
 import ListViewIcon from '../assets/images/ListViewIcon.png'
+import BouncyCheckbox from "react-native-bouncy-checkbox";
 
 // enableLatestRenderer();
 
@@ -109,8 +110,8 @@ const HomeMapScreenScreen = ({ navigation, route }) => {
                 style={styles.map}
                 customMapStyle = { mapStyle }
                 initialRegion={{
-                    latitude: 44.4178094,
-                    longitude: 26.182995,
+                    latitude: 44.59423,
+                    longitude: 26.037496176377107,
                     latitudeDelta: 0.0922,
                     longitudeDelta: 0.0421,
                 }}
@@ -198,19 +199,54 @@ const HomeMapScreenScreen = ({ navigation, route }) => {
                 onRequestClose={() => {
                     setModalVisible(modalVisible);
                 }}
+                
             >
 
-                <Text>  Modal Filters  </Text>
-                <Pressable
-                    onPress={() =>
-                        setModalVisible(false)
-                    }
-                    style={({pressed}) => [
-                        {
-                            backgroundColor: pressed ? 'rgb(10, 30, 55)' : 'rgb(10, 20, 25)',
-                        },
-                      ]}
-                ><Text>Close</Text></Pressable>
+                <View style = { styles.screen }>
+                    <Text style = { styles.title }>  Modal Filters  </Text>
+                    <Text style = { styles.text }>Tick = True</Text>
+                    <BouncyCheckbox
+                        size={30}
+                        fillColor="rgb(0, 155, 0)"
+                        unfillColor="rgb(0, 0, 0)"
+                        text="Over 50% Power"
+                        iconStyle={{ borderColor: "green" }}
+                        innerIconStyle={{ borderWidth: 2 }}
+                    />
+                    <BouncyCheckbox
+                        size={30}
+                        fillColor="rgb(0, 155, 0)"
+                        unfillColor="rgb(0, 0, 0)"
+                        text="Maximum 1km away"
+                        iconStyle={{ borderColor: "green" }}
+                        innerIconStyle={{ borderWidth: 2 }}
+                    />
+                    <BouncyCheckbox
+                        size={30}
+                        fillColor="rgb(0, 155, 0)"
+                        unfillColor="rgb(0, 0, 0)"
+                        text="One plug avalible at least"
+                        iconStyle={{ borderColor: "green" }}
+                        innerIconStyle={{ borderWidth: 2 }}
+                    />
+                    <BouncyCheckbox
+                        size={30}
+                        fillColor="rgb(0, 155, 0)"
+                        unfillColor="rgb(0, 0, 0)"
+                        text="Has multiple bus routes"
+                        iconStyle={{ borderColor: "green" }}
+                        innerIconStyle={{ borderWidth: 2 }}
+                    />
+                    <Text></Text>
+                    <Pressable
+                        onPress={() =>
+                            setModalVisible(false)
+                        }
+                        style={ ( {pressed} ) => buttonStyle( pressed ) }
+                    >
+                        <Text>Close</Text>
+                    </Pressable>
+                </View>
 
 
             </Modal>
