@@ -232,11 +232,15 @@ const styles = StyleSheet.create({
         color: 'rgb( 200, 200, 200 )',
         borderWidth: 1,
         alignItems: 'center',
+        backgroundColor: 'rgb(10, 35, 20)',
     },
     text: {
         fontSize: 16,
         margin: 10,
-        color: 'rgb( 200, 200, 200 )'
+        color: 'rgb( 200, 200, 200 )',
+        alignContent: 'center',
+        justifyContent: 'center',
+        alignSelf: 'center',
     },
     // wrapperCustom: {
     //   borderRadius: 8,

@@ -38,7 +38,7 @@ const HomeMapScreenScreen = ({ navigation, route }) => {
             };
         } )
     );
-    console.log( Markers );
+    console.debug( Markers );
 
     const onNavigate = (item) => {
         navigation.navigate('InternalServicesRouteName', { pdata: item })
@@ -92,7 +92,7 @@ const HomeMapScreenScreen = ({ navigation, route }) => {
                 }
                 style={({pressed}) => [
                     {
-                      backgroundColor: pressed ? 'rgb(10, 30, 55)' : 'rgb(10, 20, 25)',
+                        backgroundColor: pressed ? 'rgb(10, 30, 55)' : 'rgb(10, 20, 25)',
                     },
                   ]}
             ><Text>Filters</Text></Pressable>
