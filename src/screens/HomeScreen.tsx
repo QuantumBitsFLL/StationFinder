@@ -2,6 +2,7 @@
 import React from 'react';
 import { Pressable, View, Text, StyleSheet } from 'react-native';
 import styles from '../styles';
+import { buttonStyle } from '../styles';
 const HomeScreen = ({ navigation }) => {
     return (
         <View style = { styles.screen }>
@@ -17,7 +18,7 @@ const HomeScreen = ({ navigation }) => {
                 onPress={() =>
                     navigation.navigate('HomeMap', { data: '...map data...' })
                 }
-                style={ ( {pressed} ) => homeScreenButton( pressed ) }
+                style={ ( {pressed} ) => buttonStyle( pressed ) }
             ><Text style = { styles.text }>Map</Text></Pressable>
             {/* <Pressable
                 onPress={() =>
@@ -27,18 +28,11 @@ const HomeScreen = ({ navigation }) => {
             ><Text style = { styles.text }>StaticMap</Text></Pressable> */}
             <Pressable
                 onPress = { () => navigation.navigate( 'AboutScreen', {} ) }
-                style = { ( {pressed} ) => homeScreenButton( pressed ) }
+                style = { ( {pressed} ) => buttonStyle( pressed ) }
             ><Text style = { styles.text }>About</Text></Pressable>
         </View>
 
     )
 };
-const homeScreenButton = ( pressed: boolean ) => [
-    {
-        backgroundColor: pressed ? 'rgb(10, 55, 30)' : 'rgb(10, 35, 20)',
-    },
-    styles.button,
-//    styles.wrapperCustom,
-];
 
 export default HomeScreen;
