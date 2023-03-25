@@ -2,7 +2,7 @@
 import React, { useRef, useState } from 'react';
 import { Button, View, Text, StyleSheet, Dimensions, Keyboard, Modal, FlatList,
     KeyboardAvoidingView, TouchableOpacity, Image, Pressable } from 'react-native';
-import MapView, { enableLatestRenderer, Marker, PROVIDER_GOOGLE } from 'react-native-maps';
+import MapView, { enableLatestRenderer, Marker, PROVIDER_GOOGLE, LatLng } from 'react-native-maps';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Modalize } from 'react-native-modalize';
 import Stations from '../components/Stations';
@@ -26,9 +26,17 @@ const HomeMapScreenScreen = ({ navigation, route }) => {
     // For View List
     const ModalizeRef = useRef<any>(null);
 
-    const [Markers, setMarkers] = useState(
-        stations.map( (station) => station.coords )
+    const [Markers, setMarkers] = useState<Array<{title: string, coords: LatLng}>>(
+        stations.map( (station) => {
+            const coords = station.coords,
+                name = station.name;
+            return { 
+                title: name,
+                coords: coords
+            };
+        } )
     );
+    console.log( Markers );
 
     const onNavigate = (item) => {
         navigation.navigate('InternalServicesRouteName', { pdata: item })
@@ -105,11 +113,11 @@ const HomeMapScreenScreen = ({ navigation, route }) => {
                     longitudeDelta: 0.0421,
                 }}
             >
-                {Markers.map((item, index) => (
+                {Markers.map( ( marker, index ) => (
                     <Marker
-                        key={index}
-                        coordinate={item}
-                        title={`${index} - Title`}
+                        key = { index }
+                        coordinate = { marker.coords }
+                        title={`${ marker.title }`}
                         description={`${index} - Description`}
                     // onRegionChangeComplete={region => setMarkers(region)}
                     />
