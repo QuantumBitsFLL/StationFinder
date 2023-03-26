@@ -221,13 +221,16 @@ const styles = StyleSheet.create({
     //     flex: 1,
     //     justifyContent: 'center',
     // },
+    buttonView: {
+        width: "80%"
+    },
     button: { 
         justifyContent: 'center',
         alignSelf: 'center',
         margin: 3,
         padding: 6,
         borderRadius: 8,
-        width: "80%",
+        // width: "80%",
         borderColor: 'rgb( 155, 170, 180 )',
         color: 'rgb( 200, 200, 200 )',
         borderWidth: 1,
