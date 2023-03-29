@@ -1,0 +1,6 @@
+# https://numtide.github.io/devshell
+[[commands]]
+package = "nodejs-16_x"
+
+[devshell]
+packages = [ "nodejs-16_x", "fish" ]
