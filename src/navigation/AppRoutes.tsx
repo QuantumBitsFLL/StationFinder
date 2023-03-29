@@ -19,7 +19,7 @@ const AppRoutes = () => {
             >
                 <Stack.Screen
                     name = "Home"
-                    component={HomeScreen}
+                    component={ HomeScreen }
                 />
                 {/* <Stack.Screen
                     name = "Profile"
