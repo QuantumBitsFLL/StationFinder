@@ -23,7 +23,7 @@ const Button = ( props ) => {
         ).start();
     }
     return (
-        <View>
+        <View style = { styles.buttonView }>
             <Pressable
                 style = { styles.button }
                 onPressIn = { fadeIn }
