@@ -204,6 +204,7 @@ const styles = StyleSheet.create({
     screen: {
         backgroundColor: 'rgb(10, 25, 20)',
         flex: 1,
+        flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
         padding: 10,
@@ -215,14 +216,14 @@ const styles = StyleSheet.create({
         fontWeight: '900',
         justifyContent: 'flex-start',
         marginBottom: 10,
-        marginTop: 100,
+        marginTop: 10,
     },
     // container: {
     //     flex: 1,
     //     justifyContent: 'center',
     // },
     buttonView: {
-      width: "80%",
+        width: "60%",
     },
     button: { 
         justifyContent: 'center',
@@ -236,6 +237,16 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         alignItems: 'center',
         backgroundColor: 'rgb(10, 35, 20)',
+        // fontSize: 13,
+        // fontWeight: 'bold',
+    },
+    buttonText: {
+        color: 'rgb( 200, 200, 200 )',
+        fontSize: 20,
+        fontWeight: '500',
+        alignContent: 'center',
+        justifyContent: 'center',
+        alignSelf: 'center',
     },
     text: {
         fontSize: 16,
@@ -273,7 +284,7 @@ const styles = StyleSheet.create({
         height: 250,
     },
     StationsMainView: {
-        width: wp(70),
+        width: wp(40),
         marginLeft: 5,
         marginRight: 15,
         borderRadius: 10,
@@ -417,6 +428,17 @@ const styles = StyleSheet.create({
     flatView: {
         position: 'absolute',
         bottom: height * 0.03,
+    },
+    image: {
+        margin: height * 0.03,
+    },
+    smallText: {
+        fontSize: 12,
+        color: 'rgb( 1, 63, 1 )',
+        alignSelf: 'center',
+        justifyContent: 'space-between',
+        position: 'absolute',
+        bottom: 10,
     },
 });
 
