@@ -6,7 +6,7 @@ import AnimatedButton from "../AnimatedButton";
 const TextButton = ( props ) => {
     return (
         <AnimatedButton { ...props } >
-            <Text style = { styles.text }>{ props.children }</Text>
+            <Text style = { styles.buttonText }>{ props.children }</Text>
         </AnimatedButton>
     )
 }
