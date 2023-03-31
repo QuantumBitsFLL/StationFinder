@@ -284,7 +284,7 @@ const styles = StyleSheet.create({
         height: 250,
     },
     StationsMainView: {
-        width: wp(70),
+        width: wp(40),
         marginLeft: 5,
         marginRight: 15,
         borderRadius: 10,
